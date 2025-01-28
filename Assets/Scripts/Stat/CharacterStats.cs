@@ -1,11 +1,27 @@
+using System.Collections;
 using UnityEngine;
+
+public enum StatType
+{
+    strength,
+    agility,
+    vitality,
+
+    damage,
+    cirtChance,
+    cirtPower,
+
+    maxHealth,
+    armor,
+    evasion,
+    cirtResistance,
+}
 
 public class CharacterStats : MonoBehaviour
 {
     [Header("Majior stats")]
     public Stat strength; // 每点提高1点伤害和1%暴击伤害
     public Stat agility; // 每点提高1点闪避和1%的暴击几率
-    public Stat intelligence; // 每点提高1点魔法攻击和一点魔法抗性
     public Stat vitality; // 每点提高5点的生命值和1%的暴击抗性
 
     [Header("Offensive stats")]
@@ -40,8 +56,6 @@ public class CharacterStats : MonoBehaviour
     {
     }
 
-    public int GetHealth() => maxHealth.GetValue() + vitality.GetValue() * 5;
-
     public virtual void DoDamage(CharacterStats _targetStats)
     {
         if (CanAvoidAttack(_targetStats))
@@ -69,6 +83,7 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
+    public int GetHealth() => maxHealth.GetValue() + vitality.GetValue() * 5;
 
     public virtual void IncreaseHealth(int _amount)
     {
@@ -84,9 +99,6 @@ public class CharacterStats : MonoBehaviour
     protected virtual void DecreaseHealth(int _damage)
     {
         currentHealth -= _damage;
-
-        if (currentHealth <= 0)
-            Die();
 
         if (onHealthChanged != null)
             onHealthChanged();
@@ -138,28 +150,37 @@ public class CharacterStats : MonoBehaviour
 
     #endregion
 
-    //    public Stat GetStat(StatType _statType)
-    //    {
-    //        switch (_statType)
-    //        {
-    //            case StatType.strength: return strength;
-    //            case StatType.agility: return agility;
-    //            case StatType.intelligence: return intelligence;
-    //            case StatType.vitality: return vitality;
+    public Stat GetStat(StatType _statType)
+    {
+        switch (_statType)
+        {
+            case StatType.strength: return strength;
+            case StatType.agility: return agility;
+            case StatType.vitality: return vitality;
 
-    //            case StatType.damage: return damage;
-    //            case StatType.cirtChance: return cirtChance;
-    //            case StatType.cirtPower: return cirtPower;
+            case StatType.damage: return damage;
+            case StatType.cirtChance: return cirtChance;
+            case StatType.cirtPower: return cirtPower;
 
-    //            case StatType.maxHealth: return maxHealth;
-    //            case StatType.armor: return armor;
-    //            case StatType.evasion: return evasion;
-    //            case StatType.magicResistance: return magicResistance;
+            case StatType.maxHealth: return maxHealth;
+            case StatType.armor: return armor;
+            case StatType.evasion: return evasion;
+            case StatType.cirtResistance: return cirtResistance;
+        }
+        return null;
+    }
 
-    //            case StatType.fireDamage: return fireDamage;
-    //            case StatType.iceDamage: return iceDamage;
-    //            case StatType.lightingDamage: return lightingDamage;
-    //        }
-    //        return null;
-    //    }
+    public virtual void IncreaseStat(int _modifier, float _duration, Stat _statToModify)
+    {
+        StartCoroutine(StatModCoroutine(_modifier, _duration, _statToModify));
+    }
+
+    IEnumerator StatModCoroutine(int _modifier, float _duration, Stat _statToModify)
+    {
+        _statToModify.AddModifier(_modifier);
+
+        yield return new WaitForSeconds(_duration);
+
+        _statToModify.RemoveModifier(_modifier);
+    }
 }

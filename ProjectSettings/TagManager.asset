@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
+  - Item
   - 
   - 
   - 
@@ -49,6 +49,12 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 87568143
+    locked: 0
+  - name: Item
+    uniqueID: 3139190265
+    locked: 0
+  - name: UI
+    uniqueID: 1069687599
     locked: 0
   m_RenderingLayers:
   - Default

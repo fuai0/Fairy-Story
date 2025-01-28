@@ -25,7 +25,7 @@ public class RedHoodShootState : RedHoodGroundedState
     {
         base.Update();
 
-        player.SetZeroVelocity();
+        player.SetVelocity(0, rb.linearVelocity.y);
 
         if (player.attackFinish)
             stateMachine.ChangeState(player.idleState);

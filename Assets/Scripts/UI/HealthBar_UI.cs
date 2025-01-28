@@ -1,11 +1,11 @@
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class HealthBar_UI : MonoBehaviour
 {
     private Slider slider;
+    private TextMeshProUGUI healthText;
     private CharacterStats stats;
     private Entity entity;
 
@@ -13,6 +13,7 @@ public class HealthBar_UI : MonoBehaviour
     {
         stats = GetComponentInParent<CharacterStats>();
         entity = GetComponentInParent<Entity>();
+        healthText = GetComponentInChildren<TextMeshProUGUI>();
         slider = GetComponent<Slider>();
 
         entity.onFlipped += FlipUI;
@@ -25,6 +26,7 @@ public class HealthBar_UI : MonoBehaviour
     {
         slider.maxValue = stats.GetHealth();
         slider.value = stats.currentHealth;
+        healthText.text = slider.value.ToString() + " / " + slider.maxValue.ToString();
     }
 
     private void FlipUI() => slider.transform.Rotate(0, 180, 0);

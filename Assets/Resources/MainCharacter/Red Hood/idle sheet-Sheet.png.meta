@@ -154,9 +154,9 @@ TextureImporter:
       name: idle sheet-Sheet_0
       rect:
         serializedVersion: 2
-        x: 20
+        x: 17
         y: 21
-        width: 16
+        width: 23
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -176,9 +176,9 @@ TextureImporter:
       name: idle sheet-Sheet_1
       rect:
         serializedVersion: 2
-        x: 100
+        x: 96
         y: 21
-        width: 16
+        width: 23
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -198,9 +198,9 @@ TextureImporter:
       name: idle sheet-Sheet_2
       rect:
         serializedVersion: 2
-        x: 181
+        x: 177
         y: 21
-        width: 16
+        width: 23
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -220,9 +220,9 @@ TextureImporter:
       name: idle sheet-Sheet_3
       rect:
         serializedVersion: 2
-        x: 260
+        x: 258
         y: 21
-        width: 19
+        width: 23
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -242,9 +242,9 @@ TextureImporter:
       name: idle sheet-Sheet_4
       rect:
         serializedVersion: 2
-        x: 340
+        x: 337
         y: 21
-        width: 19
+        width: 23
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -266,7 +266,7 @@ TextureImporter:
         serializedVersion: 2
         x: 419
         y: 21
-        width: 22
+        width: 23
         height: 29
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -330,9 +330,9 @@ TextureImporter:
       name: idle sheet-Sheet_8
       rect:
         serializedVersion: 2
-        x: 659
+        x: 657
         y: 21
-        width: 20
+        width: 23
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -352,9 +352,9 @@ TextureImporter:
       name: idle sheet-Sheet_9
       rect:
         serializedVersion: 2
-        x: 739
+        x: 737
         y: 21
-        width: 19
+        width: 23
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -374,9 +374,9 @@ TextureImporter:
       name: idle sheet-Sheet_10
       rect:
         serializedVersion: 2
-        x: 820
+        x: 817
         y: 21
-        width: 17
+        width: 23
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -396,9 +396,9 @@ TextureImporter:
       name: idle sheet-Sheet_11
       rect:
         serializedVersion: 2
-        x: 899
+        x: 896
         y: 21
-        width: 17
+        width: 23
         height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -418,9 +418,9 @@ TextureImporter:
       name: idle sheet-Sheet_12
       rect:
         serializedVersion: 2
-        x: 979
+        x: 976
         y: 21
-        width: 17
+        width: 23
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -440,9 +440,9 @@ TextureImporter:
       name: idle sheet-Sheet_13
       rect:
         serializedVersion: 2
-        x: 1058
+        x: 1056
         y: 21
-        width: 18
+        width: 23
         height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -462,9 +462,9 @@ TextureImporter:
       name: idle sheet-Sheet_14
       rect:
         serializedVersion: 2
-        x: 1137
+        x: 1136
         y: 21
-        width: 21
+        width: 23
         height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -484,9 +484,9 @@ TextureImporter:
       name: idle sheet-Sheet_15
       rect:
         serializedVersion: 2
-        x: 1217
+        x: 1216
         y: 21
-        width: 21
+        width: 23
         height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -506,9 +506,9 @@ TextureImporter:
       name: idle sheet-Sheet_16
       rect:
         serializedVersion: 2
-        x: 1297
+        x: 1296
         y: 21
-        width: 21
+        width: 23
         height: 29
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -528,9 +528,9 @@ TextureImporter:
       name: idle sheet-Sheet_17
       rect:
         serializedVersion: 2
-        x: 1379
+        x: 1377
         y: 21
-        width: 18
+        width: 23
         height: 31
       alignment: 7
       pivot: {x: 0.5, y: 0}
