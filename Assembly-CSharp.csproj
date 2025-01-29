@@ -112,10 +112,11 @@
     <Compile Include="Assets\Scripts\AnimationTriggers\MushroomAnimationTrigger.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\Player\BlueZero\BlueZeroMoveState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\Scripts\Player\BlueZero\BlueZeroMoveState.cs" />
     <Compile Include="Assets\Scripts\Stat\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Stat\Stat.cs" />
+    <Compile Include="Assets\Scripts\UI\StatSlot_UI.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodGroundedState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />

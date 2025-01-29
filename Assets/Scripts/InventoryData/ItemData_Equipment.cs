@@ -28,7 +28,6 @@ public class ItemData_Equipment : ItemData
     public int maxHealth;
     public int armor;
     public int evasion;
-    public int cirtResistance;
 
     [Header("craft requirement")]
     public List<InventoryItem> craftingMaterials;
@@ -50,7 +49,6 @@ public class ItemData_Equipment : ItemData
         playerStats.maxHealth.AddModifier(maxHealth);
         playerStats.armor.AddModifier(armor);
         playerStats.evasion.AddModifier(evasion);
-        playerStats.cirtResistance.AddModifier(cirtResistance);
     }
 
     public void RemoveModifiers()
@@ -68,7 +66,6 @@ public class ItemData_Equipment : ItemData
         playerStats.maxHealth.RemoveModifier(maxHealth);
         playerStats.armor.RemoveModifier(armor);
         playerStats.evasion.RemoveModifier(evasion);
-        playerStats.cirtResistance.RemoveModifier(cirtResistance);
     }
 
     public override string GetDescription()
@@ -87,7 +84,6 @@ public class ItemData_Equipment : ItemData
         AddItemDescription(maxHealth, "maxHealth");
         AddItemDescription(armor, "armor");
         AddItemDescription(evasion, "evasion");
-        AddItemDescription(cirtResistance, "cirtResistance");
 
         return sb.ToString();
     }

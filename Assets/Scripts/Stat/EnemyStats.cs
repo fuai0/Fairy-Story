@@ -39,7 +39,6 @@ public class EnemyStats : CharacterStats
         Modify(maxHealth);
         Modify(armor);
         Modify(evasion);
-        Modify(cirtResistance);
     }
 
     private void Modify(Stat _stat)

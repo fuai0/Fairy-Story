@@ -6,6 +6,8 @@ public enum StatType
     strength,
     agility,
     vitality,
+    fate,
+
 
     damage,
     cirtChance,
@@ -13,8 +15,7 @@ public enum StatType
 
     maxHealth,
     armor,
-    evasion,
-    cirtResistance,
+    evasion
 }
 
 public class CharacterStats : MonoBehaviour
@@ -22,7 +23,8 @@ public class CharacterStats : MonoBehaviour
     [Header("Majior stats")]
     public Stat strength; // 每点提高1点伤害和1%暴击伤害
     public Stat agility; // 每点提高1点闪避和1%的暴击几率
-    public Stat vitality; // 每点提高5点的生命值和1%的暴击抗性
+    public Stat vitality; // 每点提高5点的生命值
+    public Stat fate; // 每点影响敌人源点掉落数量
 
     [Header("Offensive stats")]
     public Stat damage; // 伤害
@@ -33,7 +35,6 @@ public class CharacterStats : MonoBehaviour
     public Stat maxHealth; // 最大生命值
     public Stat armor;  // 护甲
     public Stat evasion; // 闪避
-    public Stat cirtResistance; // 暴击抗性
 
     public int currentHealth;
 
@@ -165,7 +166,6 @@ public class CharacterStats : MonoBehaviour
             case StatType.maxHealth: return maxHealth;
             case StatType.armor: return armor;
             case StatType.evasion: return evasion;
-            case StatType.cirtResistance: return cirtResistance;
         }
         return null;
     }

@@ -8,6 +8,9 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject mapUI;
     [SerializeField] private GameObject optionUI;
 
+    [SerializeField] private GameObject majorStatsUI;
+    [SerializeField] private GameObject statsUI;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.Tab))
@@ -43,6 +46,14 @@ public class UI : MonoBehaviour
         }
 
         SwitchTo(_menu);
+    }
+
+    public void SwitchStatsUI(GameObject _statsUI)
+    {
+        majorStatsUI.SetActive(false);
+        statsUI.SetActive(false);
+
+        _statsUI.SetActive(true);
     }
 }
 
