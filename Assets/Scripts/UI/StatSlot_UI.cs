@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UI_StatSlot : MonoBehaviour
+public class StatSlot_UI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI statValueText;
     [SerializeField] private StatType statType;
@@ -13,8 +13,6 @@ public class UI_StatSlot : MonoBehaviour
     private void Start()
     {
         UpdateStatValue();
-
-        statValueText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void UpdateStatValue()

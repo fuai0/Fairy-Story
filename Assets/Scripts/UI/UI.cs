@@ -26,7 +26,6 @@ public class UI : MonoBehaviour
             SwitchWithKeyTo(optionUI);
     }
 
-
     public void SwitchTo(GameObject _menu)
     {
         for (int i = 0; i < transform.childCount; i++)

@@ -14,7 +14,7 @@ TagManager:
   - Player
   - Enemy
   - Item
-  - 
+  - Fog
   - 
   - 
   - 
@@ -55,6 +55,9 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1069687599
+    locked: 0
+  - name: Fog
+    uniqueID: 1414431617
     locked: 0
   m_RenderingLayers:
   - Default
