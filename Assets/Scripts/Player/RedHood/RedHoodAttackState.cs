@@ -17,7 +17,12 @@ public class RedHoodAttackState : PlayerState
     {
         base.Enter();
 
-        xInput = 0;
+        // 获取鼠标位置
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        if ((mousePosition.x - player.transform.position.x) * player.facingDir < 0)
+            player.Flip();
 
         if (comboCounter > 2 || Time.time >= lastTimeAttacked + comboWindow)
         {
@@ -26,24 +31,12 @@ public class RedHoodAttackState : PlayerState
 
         player.anim.SetInteger("ComboCounter", comboCounter);
         player.anim.speed = 1.2f;
-        float attackDir = AttackDir();
 
-        player.SetVelocity(player.attackMovement[comboCounter].x * attackDir, player.attackMovement[comboCounter].y);
+        player.SetVelocity(player.attackMovement[comboCounter].x * player.facingDir, player.attackMovement[comboCounter].y);
 
         stateTimer = .1f;
     }
 
-    private float AttackDir()
-    {
-        float attackDir = player.facingDir;
-
-        if (xInput != 0)
-        {
-            attackDir = xInput;
-        }
-
-        return attackDir;
-    }
 
     public override void Exit()
     {

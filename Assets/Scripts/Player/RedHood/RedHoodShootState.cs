@@ -10,6 +10,13 @@ public class RedHoodShootState : RedHoodGroundedState
     {
         base.Enter();
 
+        // 获取鼠标位置
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        if ((mousePosition.x - player.transform.position.x) * player.facingDir < 0)
+            player.Flip();
+
         player.sr.flipX = true;
     }
 

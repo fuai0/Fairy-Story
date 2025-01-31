@@ -71,7 +71,6 @@
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodIdleState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Enemy\Mushroom\MushroomHittedState.cs" />
-    <Compile Include="Assets\Scripts\Fog.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodHittedState.cs" />
     <Compile Include="Assets\Scripts\Entity.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodMoveState.cs" />
