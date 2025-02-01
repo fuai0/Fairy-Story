@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8e68c411eef614f9affc960062f7a5, type: 3}
   m_Name: "\u7EA2\u8272\u6597\u7BF7"
   m_EditorClassIdentifier: 
-  itemType: 0
+  itemType: 1
   itemName: "\u7EA2\u8272\u6597\u7BF7"
   icon: {fileID: -1062421431194723624, guid: d7d975b7e360a4a439941654561c8dbf, type: 3}
   itemId: 
@@ -28,5 +28,4 @@ MonoBehaviour:
   maxHealth: 0
   armor: 0
   evasion: 0
-  cirtResistance: 0
   craftingMaterials: []

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemName: "\u730E\u4EBA\u77ED\u5F13"
-  icon: {fileID: 0}
+  icon: {fileID: -6184507285319492425, guid: 076fbb356cd971146a83b3f4302cbb4e, type: 3}
   itemId: 
   itemDescription: 
   dropChance: 0
@@ -28,5 +28,4 @@ MonoBehaviour:
   maxHealth: 0
   armor: 0
   evasion: 0
-  cirtResistance: 0
   craftingMaterials: []

@@ -7,9 +7,26 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject inventoryUI;
     [SerializeField] private GameObject mapUI;
     [SerializeField] private GameObject optionUI;
+    [SerializeField] private GameObject craftUI;
 
     [SerializeField] private GameObject majorStatsUI;
     [SerializeField] private GameObject statsUI;
+
+    public CraftWindow_UI craftWindow;
+    public static UI instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(instance.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
 
     void Update()
     {
@@ -53,6 +70,17 @@ public class UI : MonoBehaviour
         statsUI.SetActive(false);
 
         _statsUI.SetActive(true);
+    }
+
+    public void SwitchCraftUI()
+    {
+        if (craftUI != null && craftUI.activeSelf)
+        {
+            craftUI.SetActive(false);
+            return;
+        }
+
+        craftUI.SetActive(true);
     }
 }
 

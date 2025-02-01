@@ -77,9 +77,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\Scripts\UI\CraftList_UI.cs" />
     <Compile Include="Assets\Scripts\InventoryData\ItemData_Equipment.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\Managers\PanelManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
@@ -94,8 +96,10 @@
     <Compile Include="Assets\Scripts\AnimationTriggers\RedHoodAnimationTrigger.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodAirState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\Scripts\UI\CraftWindow_UI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodShootState.cs" />
+    <Compile Include="Assets\Scripts\UI\CraftSlot_UI.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodAttackState.cs" />
     <Compile Include="Assets\Scripts\InventoryData\ItemObject.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodWallJumpState.cs" />
@@ -121,6 +125,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBar_UI.cs" />
+    <Compile Include="Assets\Scripts\GameObject\Altar.cs" />
     <Compile Include="Assets\Scripts\Enemy\Mushroom\MushroomAttackState.cs" />
     <Compile Include="Assets\Scripts\InventoryData\InventoryItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
@@ -170,7 +175,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Resources\Surroundings\RedHood\DarkForest1.2\about.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
