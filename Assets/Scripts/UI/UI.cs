@@ -8,6 +8,7 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject mapUI;
     [SerializeField] private GameObject optionUI;
     [SerializeField] private GameObject craftUI;
+    [SerializeField] private GameObject worldUI;
 
     [SerializeField] private GameObject majorStatsUI;
     [SerializeField] private GameObject statsUI;
@@ -81,6 +82,17 @@ public class UI : MonoBehaviour
         }
 
         craftUI.SetActive(true);
+    }
+
+    public void SwitchWorldUI()
+    {
+        if (worldUI != null && worldUI.activeSelf)
+        {
+            worldUI.SetActive(false);
+            return;
+        }
+
+        worldUI.SetActive(true);
     }
 }
 

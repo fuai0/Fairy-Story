@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class Altar : MonoBehaviour
+public class FairStory : MonoBehaviour
 {
     private bool isInsideTrigger = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<Player>() != null)
+        if (collision.gameObject.GetComponent<Player>() != null)
         {
-            PanelManager.instance.ShowPanel("按F键打开祭坛!");
+            PanelManager.instance.ShowPanel("按F键打开童话书!");
             isInsideTrigger = true;
         }
     }
@@ -25,6 +25,6 @@ public class Altar : MonoBehaviour
     private void Update()
     {
         if (isInsideTrigger && Input.GetKeyDown(KeyCode.F))
-            UI.instance.SwitchCraftUI();
+            UI.instance.SwitchWorldUI();
     }
 }

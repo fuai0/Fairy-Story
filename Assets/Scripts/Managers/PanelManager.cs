@@ -35,7 +35,5 @@ public class PanelManager : MonoBehaviour
     {
         panel.SetActive(false);
     }
-
-
 }
 

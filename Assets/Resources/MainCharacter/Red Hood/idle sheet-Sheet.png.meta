@@ -546,6 +546,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: idle sheet-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 40
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68b30ec0be247b4c8df69717b2618ce
+      internalID: -440580519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -570,6 +592,7 @@ TextureImporter:
       idle sheet-Sheet_15: 7676116845373998728
       idle sheet-Sheet_16: -1001250234447512021
       idle sheet-Sheet_17: -6423605263834463869
+      idle sheet-Sheet_18: -440580519
       idle sheet-Sheet_2: -7050135170561960304
       idle sheet-Sheet_3: -825478908906485022
       idle sheet-Sheet_4: 1513770297049294160
