@@ -1,4 +1,4 @@
-using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class UI : MonoBehaviour
@@ -12,6 +12,8 @@ public class UI : MonoBehaviour
 
     [SerializeField] private GameObject majorStatsUI;
     [SerializeField] private GameObject statsUI;
+
+    [SerializeField] private TMP_Dropdown dropDown;
 
     public CraftWindow_UI craftWindow;
     public static UI instance;
@@ -51,7 +53,7 @@ public class UI : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(false);
         }
 
-         _menu.SetActive(true);
+        _menu.SetActive(true);
     }
 
     public void SwitchWithKeyTo(GameObject _menu)
@@ -93,6 +95,16 @@ public class UI : MonoBehaviour
         }
 
         worldUI.SetActive(true);
+    }
+
+    public void SetResolution()
+    {
+        switch (dropDown.value)
+        {
+            case 0: Screen.SetResolution(1920, 1080, false); break;
+            case 1: Screen.SetResolution(1280, 720, false); break;
+            case 2: Screen.SetResolution(720, 480, false); break;
+        }
     }
 }
 

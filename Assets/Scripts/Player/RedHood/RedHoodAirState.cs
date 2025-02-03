@@ -34,7 +34,7 @@ public class RedHoodAirState : PlayerState
 
         if (xInput != 0)
         {
-            player.SetVelocity(player.moveSpeed * xInput * .8f, rb.linearVelocity.y);
+            player.SetVelocity(player.moveSpeed * xInput * .9f, rb.linearVelocity.y);
         }
     }
 }

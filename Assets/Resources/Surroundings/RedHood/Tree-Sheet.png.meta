@@ -1,34 +1,25 @@
 fileFormatVersion: 2
-guid: 4902df38acf217140a0cb9e13da252f4
+guid: 480f0bb8d81698c4b904ef246d778d2d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5619840528850464871
-    second: env_trees_0
+      213: -2416129866276861210
+    second: Tree-Sheet_0
   - first:
-      213: -2163711329832910871
-    second: env_trees_1
+      213: 7754431466150347704
+    second: Tree-Sheet_1
   - first:
-      213: -6329860156603004030
-    second: env_trees_2
+      213: 1458121293318497102
+    second: Tree-Sheet_2
   - first:
-      213: 606189441930917708
-    second: env_trees_3
+      213: 2116725906460246823
+    second: Tree-Sheet_3
   - first:
-      213: -2966516423299009149
-    second: env_trees_4
+      213: -1721767429572691631
+    second: Tree-Sheet_4
   - first:
-      213: 8448969214746628593
-    second: env_trees_5
-  - first:
-      213: 108726766031101380
-    second: env_trees_6
-  - first:
-      213: -1022136944751439320
-    second: env_trees_7
-  - first:
-      213: -5784459606456063862
-    second: env_trees_8
+      213: -6319518520993510541
+    second: Tree-Sheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 18
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -124,199 +115,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: env_trees_0
+      name: Tree-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 287
-        width: 257
-        height: 247
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 0
+        width: 65
+        height: 77
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 99f468f60d05202b0800000000000000
-      internalID: -5619840528850464871
+      spriteID: 6ea0b5510be287ed0800000000000000
+      internalID: -2416129866276861210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: env_trees_1
+      name: Tree-Sheet_1
       rect:
         serializedVersion: 2
-        x: 341
-        y: 271
-        width: 172
-        height: 271
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 65
+        y: 0
+        width: 63
+        height: 77
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ef32d46204f8f1e0800000000000000
-      internalID: -2163711329832910871
+      spriteID: 8b3c00f65564d9b60800000000000000
+      internalID: 7754431466150347704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: env_trees_2
+      name: Tree-Sheet_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 247
-        width: 149
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 132
+        y: 0
+        width: 58
+        height: 70
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28b87cf79b1d728a0800000000000000
-      internalID: -6329860156603004030
+      spriteID: e43aeaf37994c3410800000000000000
+      internalID: 1458121293318497102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: env_trees_3
+      name: Tree-Sheet_3
       rect:
         serializedVersion: 2
-        x: 150
-        y: 255
-        width: 81
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 196
+        y: 0
+        width: 57
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c4772e0f51e996800800000000000000
-      internalID: 606189441930917708
+      spriteID: 7230e6d3ffe106d10800000000000000
+      internalID: 2116725906460246823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: env_trees_4
+      name: Tree-Sheet_4
       rect:
         serializedVersion: 2
-        x: 341
-        y: 235
-        width: 122
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 271
+        y: 0
+        width: 33
+        height: 41
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38576e0c701d4d6d0800000000000000
-      internalID: -2966516423299009149
+      spriteID: 1597b7625ad0b18e0800000000000000
+      internalID: -1721767429572691631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: env_trees_5
+      name: Tree-Sheet_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 63
-        width: 127
-        height: 177
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 337
+        y: 0
+        width: 31
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f11f2b7cb4c04570800000000000000
-      internalID: 8448969214746628593
+      spriteID: 37b0eac236f8c48a0800000000000000
+      internalID: -6319518520993510541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: env_trees_6
+      name: Tree-Sheet_6
       rect:
         serializedVersion: 2
-        x: 422
-        y: 47
-        width: 121
-        height: 153
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 401
+        y: 0
+        width: 31
+        height: 13
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4cd5cdaea66428100800000000000000
-      internalID: 108726766031101380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: env_trees_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 11
-        width: 137
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 82299404dd3a0d1f0800000000000000
-      internalID: -1022136944751439320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: env_trees_8
-      rect:
-        serializedVersion: 2
-        x: 425
-        y: 15
-        width: 85
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a882793a2a879bfa0800000000000000
-      internalID: -5784459606456063862
+      spriteID: e451ccf199d0bb84b8e9d89cf095e79e
+      internalID: -389834000
       vertices: []
       indices: 
       edges: []
@@ -325,7 +272,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2990ce616e834e3448f7f316d7d6a29a
     internalID: 0
     vertices: []
     indices: 
@@ -335,15 +282,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      env_trees_0: -5619840528850464871
-      env_trees_1: -2163711329832910871
-      env_trees_2: -6329860156603004030
-      env_trees_3: 606189441930917708
-      env_trees_4: -2966516423299009149
-      env_trees_5: 8448969214746628593
-      env_trees_6: 108726766031101380
-      env_trees_7: -1022136944751439320
-      env_trees_8: -5784459606456063862
+      Tree-Sheet_0: -2416129866276861210
+      Tree-Sheet_1: 7754431466150347704
+      Tree-Sheet_2: 1458121293318497102
+      Tree-Sheet_3: 2116725906460246823
+      Tree-Sheet_4: -1721767429572691631
+      Tree-Sheet_5: -6319518520993510541
+      Tree-Sheet_6: -389834000
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

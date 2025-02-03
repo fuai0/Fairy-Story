@@ -49,6 +49,7 @@ public class Door : MonoBehaviour
     private IEnumerator ChangeScene()
     {
         yield return new WaitForSeconds(.4f);
+        PanelManager.instance.HidePanel();
         SceneManager.LoadScene(worldName.text);
     }
 
@@ -56,5 +57,6 @@ public class Door : MonoBehaviour
     {
         isActivate = true;
         buttonString.text = "选定世界";
+        buttonString.color = Color.green;
     }
 }
