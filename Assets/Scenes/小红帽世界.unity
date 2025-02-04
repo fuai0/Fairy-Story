@@ -343,7 +343,7 @@ Transform:
   m_GameObject: {fileID: 416070692}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.293653, y: -5.0400004, z: -10}
+  m_LocalPosition: {x: -22.293653, y: -3.2000003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1462,14 +1462,14 @@ MonoBehaviour:
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.75
+  m_ScreenY: 0.59
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.2
-  m_DeadZoneHeight: 0.2
+  m_DeadZoneHeight: 0.35
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
+  m_SoftZoneHeight: 0.76
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 0
@@ -1763,7 +1763,7 @@ Transform:
   m_GameObject: {fileID: 1936534912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.00000023841858, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25820,6 +25820,7 @@ MonoBehaviour:
   worldUI: {fileID: 0}
   majorStatsUI: {fileID: 6641688574968598339}
   statsUI: {fileID: 264921878081001096}
+  dropDown: {fileID: 0}
   craftWindow: {fileID: 0}
 --- !u!1839735485 &8007598235269734000
 Tilemap:

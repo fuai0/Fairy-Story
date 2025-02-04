@@ -66,10 +66,12 @@
     <Compile Include="Assets\Scripts\InventoryData\ItemData.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\Scripts\Save\FileDataHandler.cs" />
     <Compile Include="Assets\Scripts\Player\BlueZero\BlueZero.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodIdleState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameObject\CheckPoint.cs" />
     <Compile Include="Assets\Scripts\Enemy\Mushroom\MushroomHittedState.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodHittedState.cs" />
@@ -77,6 +79,7 @@
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodMoveState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
+    <Compile Include="Assets\Scripts\Managers\SaveManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Scripts\GameObject\FairStory.cs" />
     <Compile Include="Assets\Scripts\UI\CraftList_UI.cs" />
@@ -98,6 +101,8 @@
     <Compile Include="Assets\Scripts\AnimationTriggers\RedHoodAnimationTrigger.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodAirState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\Scripts\UI\SaveSlot_UI.cs" />
+    <Compile Include="Assets\Scripts\Save\SerializableDictionary.cs" />
     <Compile Include="Assets\Scripts\UI\CraftWindow_UI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodShootState.cs" />
@@ -109,12 +114,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
+    <Compile Include="Assets\Scripts\Save\ISaveManager.cs" />
     <Compile Include="Assets\Scripts\InventoryData\Effect\BuffEffect.cs" />
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodWallSlideState.cs" />
     <Compile Include="Assets\Scripts\InventoryData\ItemDrop.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Enemy\Mushroom\MushroomIdleState.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveSlot.cs" />
     <Compile Include="Assets\Scripts\AnimationTriggers\MushroomAnimationTrigger.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
@@ -126,8 +133,10 @@
     <Compile Include="Assets\Scripts\Player\RedHood\RedHoodGroundedState.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\Scripts\UI\Option_UI.cs" />
     <Compile Include="Assets\Scripts\UI\HealthBar_UI.cs" />
     <Compile Include="Assets\Scripts\GameObject\Altar.cs" />
+    <Compile Include="Assets\Scripts\Save\SaveData.cs" />
     <Compile Include="Assets\Scripts\Enemy\Mushroom\MushroomAttackState.cs" />
     <Compile Include="Assets\Scripts\InventoryData\InventoryItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
