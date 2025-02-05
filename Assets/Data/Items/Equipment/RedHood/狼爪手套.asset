@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af8e68c411eef614f9affc960062f7a5, type: 3}
-  m_Name: "\u730E\u4EBA\u77ED\u5F13"
+  m_Name: "\u72FC\u722A\u624B\u5957"
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: "\u730E\u4EBA\u77ED\u5F13"
-  icon: {fileID: -6184507285319492425, guid: 076fbb356cd971146a83b3f4302cbb4e, type: 3}
-  itemId: 
+  itemName: "\u72FC\u722A\u624B\u5957"
+  icon: {fileID: 1949537107891184483, guid: d7d975b7e360a4a439941654561c8dbf, type: 3}
+  itemId: 2
   itemDescription: 
   dropChance: 0
   equipmentType: 0

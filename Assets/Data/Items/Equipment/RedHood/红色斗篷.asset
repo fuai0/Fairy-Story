@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 1
   itemName: "\u7EA2\u8272\u6597\u7BF7"
   icon: {fileID: -1062421431194723624, guid: d7d975b7e360a4a439941654561c8dbf, type: 3}
-  itemId: 
+  itemId: 4
   itemDescription: 
   dropChance: 0
   equipmentType: 1

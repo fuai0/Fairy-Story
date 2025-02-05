@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af8e68c411eef614f9affc960062f7a5, type: 3}
-  m_Name: "\u72FC\u722A\u624B\u5957"
+  m_Name: "\u72FC\u5916\u5A46\u7684\u4F2A\u88C5"
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: "\u72FC\u722A\u624B\u5957"
-  icon: {fileID: 1949537107891184483, guid: d7d975b7e360a4a439941654561c8dbf, type: 3}
-  itemId: 
+  itemName: "\u72FC\u5916\u5A46\u7684\u4F2A\u88C5"
+  icon: {fileID: -6763620941933801878, guid: d7d975b7e360a4a439941654561c8dbf, type: 3}
+  itemId: 1
   itemDescription: 
   dropChance: 0
-  equipmentType: 0
+  equipmentType: 2
   strength: 0
   agility: 0
   vitality: 0

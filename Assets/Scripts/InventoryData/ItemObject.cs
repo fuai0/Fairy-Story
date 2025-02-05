@@ -31,7 +31,7 @@ public class ItemObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<RedHood>() != null)
+        if (collision.GetComponent<Player>() != null)
         {
             PickupItem();
         }

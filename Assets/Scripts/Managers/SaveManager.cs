@@ -7,18 +7,19 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEditor.Overlays;
 using UnityEngine;
 
-public class SaveManager : MonoBehaviour
+public class SaveManager : MonoBehaviour,ISaveManager
 {
     public static SaveManager instance;
 
-    [Header("存档配置")]
-    public int maxSaveSlots = 5;          // 最大存档槽数量
     public string saveFolder = "Saves";   // 存档文件夹名称
     public string saveFilePrefix = "save";// 存档文件名前缀
 
     public SaveSlot[] saveSlots;         // 所有存档槽信息
-    private string saveDirectory;         // 存档完整路径
 
+    private int maxSaveSlots = 5;
+    private string saveDirectory;
+    private SaveData saveData = new SaveData();
+    private List<ISaveManager> saveManagers;
     private FileDataHandler fileDataHandler;
 
     void Awake()
@@ -37,7 +38,7 @@ public class SaveManager : MonoBehaviour
 
     private void Start()
     {
-        fileDataHandler = new FileDataHandler();    
+        fileDataHandler = new FileDataHandler();
     }
 
     // 初始化存档系统
@@ -70,33 +71,46 @@ public class SaveManager : MonoBehaviour
     // 保存到指定槽位
     public void SaveGame(int slotIndex)
     {
-        SaveData data = new SaveData
+        saveManagers = FindAllSaveManagers();
+
+        foreach (ISaveManager saveManager in saveManagers)
         {
-            saveIndex = slotIndex,
-            saveName = "存档_" + DateTime.Now.ToString("yyyyMMdd_HHmm"),
-            sceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex,
-            playerPosition = PlayerManager.instance.player.transform.position,
-        };
+            saveManager.SaveData(ref saveData);
+        }
 
         string fullPath = GetSaveFilePath(slotIndex);
-        fileDataHandler.Save(fullPath, data);
-        LoadSaveSlotsInfo();
-    }
+        fileDataHandler.Save(fullPath, saveData);
 
-    // 获取存档文件路径
-    private string GetSaveFilePath(int slotIndex)
-    {
-        return Path.Combine(saveDirectory, $"{saveFilePrefix}_{slotIndex}.dat");
+        LoadSaveSlotsInfo();
     }
 
     // 从指定槽位加载
     public void LoadGame(int slotIndex)
     {
+
         string fullPlth = GetSaveFilePath(slotIndex);
         if (!File.Exists(fullPlth)) return;
 
-        fileDataHandler.Load(fullPlth);
+        saveData = fileDataHandler.Load(fullPlth);
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(saveData.sceneIndex); // 优先加载场景
+
+        StartCoroutine(DelayLoad());
     }
+
+    private IEnumerator DelayLoad()
+    {
+        yield return new WaitForSeconds(.1f);
+        saveManagers = FindAllSaveManagers();
+
+        foreach (ISaveManager saveManager in saveManagers)
+        {
+            saveManager.LoadData(saveData);
+        }
+    }
+
+    // 获取存档文件路径
+    private string GetSaveFilePath(int slotIndex) => Path.Combine(saveDirectory, $"{saveFilePrefix}_{slotIndex}.dat");
 
     // 删除存档
     public void DeleteSave(int slotIndex)
@@ -110,8 +124,23 @@ public class SaveManager : MonoBehaviour
     }
 
     // 检查存档是否存在
-    public bool IsSaveSlotEmpty(int slotIndex)
+    public bool IsSaveSlotEmpty(int slotIndex) => saveSlots[slotIndex].isEmpty;
+
+    // 获取每个文件的存档接口
+    private List<ISaveManager> FindAllSaveManagers()
     {
-        return saveSlots[slotIndex].isEmpty;
+        IEnumerable<ISaveManager> saveManagers = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.InstanceID).OfType<ISaveManager>();
+        return new List<ISaveManager>(saveManagers);
+    }
+
+    public void LoadData(SaveData _data)
+    {
+        PlayerManager.instance.player.transform.position = _data.playerPosition;
+    }
+
+    public void SaveData(ref SaveData _data)
+    {
+        _data.sceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        _data.playerPosition = PlayerManager.instance.player.transform.position;
     }
 }

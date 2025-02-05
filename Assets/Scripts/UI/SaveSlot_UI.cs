@@ -1,4 +1,3 @@
-using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -36,6 +35,12 @@ public class SaveSlot_UI : MonoBehaviour
     public void LoadSlot()
     {
         SaveManager.instance.LoadGame(slotIndex);
+        Initialize();
+    }
+
+    public void DeleteSlot()
+    {
+        SaveManager.instance.DeleteSave(slotIndex);
         Initialize();
     }
 }

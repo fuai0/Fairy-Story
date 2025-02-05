@@ -1,7 +1,5 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -40,17 +38,13 @@ public class Door : MonoBehaviour
     private void Update()
     {
         if (isInsideTrigger && Input.GetKeyDown(KeyCode.F))
-            StartCoroutine(ChangeScene());
+        {
+            PanelManager.instance.HidePanel();
+            GameManager.instance.ChangeSence(worldName.text);
+        }
 
         if (isActivate)
             ps.Play();
-    }
-
-    private IEnumerator ChangeScene()
-    {
-        yield return new WaitForSeconds(.4f);
-        PanelManager.instance.HidePanel();
-        SceneManager.LoadScene(worldName.text);
     }
 
     public void ActivateDoor()

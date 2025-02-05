@@ -94,7 +94,5 @@ public class UI : MonoBehaviour
 
         worldUI.SetActive(true);
     }
-
-    
 }
 

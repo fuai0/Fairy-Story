@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PanelManager : MonoBehaviour
@@ -21,7 +20,7 @@ public class PanelManager : MonoBehaviour
     }
 
     private void Start()
-    { 
+    {
         HidePanel();
     }
 
