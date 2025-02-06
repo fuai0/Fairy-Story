@@ -11,8 +11,8 @@ public class SaveData
     public SerializableDictionary<string, int> inventoryId;
     public List<string> equipId;
 
-    public SerializableDictionary<string, bool> checkpoints;
-    public string closestCheckpointId;
+    public SerializableDictionary<string, bool> checkPoints;
+    public string closestCheckPointId;
 
     public SerializableDictionary<string, float> volumeSettings;
 
@@ -21,8 +21,8 @@ public class SaveData
         inventoryId = new SerializableDictionary<string, int>();
         equipId = new List<string>();
 
-        closestCheckpointId = string.Empty;
-        checkpoints = new SerializableDictionary<string, bool>();
+        closestCheckPointId = string.Empty;
+        checkPoints = new SerializableDictionary<string, bool>();
         volumeSettings = new SerializableDictionary<string, float>();
     }
 }

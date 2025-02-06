@@ -1,25 +1,10 @@
 using UnityEngine;
 
-public class Altar : MonoBehaviour
+public class Altar : InteractiveItem
 {
-    private bool isInsideTrigger = false;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Start()
     {
-        if(collision.GetComponent<Player>() != null)
-        {
-            PanelManager.instance.ShowPanel("按F键打开祭坛!");
-            isInsideTrigger = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Player>() != null)
-        {
-            PanelManager.instance.HidePanel();
-            isInsideTrigger = false;
-        }
+        panelText = "按F键打开祭坛!";
     }
 
     private void Update()

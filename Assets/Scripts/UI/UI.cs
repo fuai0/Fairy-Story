@@ -9,9 +9,16 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject optionUI;
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject worldUI;
+    [SerializeField] private GameObject checkMenuUI;
 
     [SerializeField] private GameObject majorStatsUI;
     [SerializeField] private GameObject statsUI;
+
+    [Header("Item Tip")]
+    [SerializeField] private GameObject itemToolTip;
+    [SerializeField] private TextMeshProUGUI itemNameText;
+    [SerializeField] private TextMeshProUGUI itemTypeText;
+    [SerializeField] private TextMeshProUGUI itemDescription;
 
     public CraftWindow_UI craftWindow;
     public static UI instance;
@@ -27,7 +34,6 @@ public class UI : MonoBehaviour
             instance = this;
         }
     }
-
 
     void Update()
     {
@@ -52,6 +58,7 @@ public class UI : MonoBehaviour
         }
 
         _menu.SetActive(true);
+        GameManager.instance.PauseGame(true);
     }
 
     public void SwitchWithKeyTo(GameObject _menu)
@@ -59,6 +66,7 @@ public class UI : MonoBehaviour
         if (_menu != null && _menu.activeSelf)
         {
             _menu.SetActive(false);
+            GameManager.instance.PauseGame(false);
             return;
         }
 
@@ -73,26 +81,47 @@ public class UI : MonoBehaviour
         _statsUI.SetActive(true);
     }
 
-    public void SwitchCraftUI()
-    {
-        if (craftUI != null && craftUI.activeSelf)
-        {
-            craftUI.SetActive(false);
-            return;
-        }
+    public void SwitchCraftUI() => SwitchWithKeyTo(craftUI);
 
-        craftUI.SetActive(true);
+    public void SwitchWorldUI() => SwitchWithKeyTo(worldUI);
+
+    public void SwitchCheckMenuUI() => SwitchWithKeyTo(checkMenuUI);
+
+    public void ResetTime()
+    {
+        GameManager.instance.PauseGame(false);
     }
 
-    public void SwitchWorldUI()
+    public void ShowItemTip(ItemData _itemData)
     {
-        if (worldUI != null && worldUI.activeSelf)
+        itemNameText.text = _itemData.itemName;
+        itemTypeText.text = "材料";
+        itemDescription.text = _itemData.itemDescription;
+
+        itemToolTip.SetActive(true);
+    }
+
+    public void ShowEquipmentTip(ItemData_Equipment _itemData)
+    {
+        itemNameText.text = _itemData.itemName;
+
+        switch(_itemData.equipmentType)
         {
-            worldUI.SetActive(false);
-            return;
+            case EquipmentType.Weapon: itemTypeText.text = "武器"; break;
+            case EquipmentType.Armor: itemTypeText.text = "护甲"; break;
+            case EquipmentType.Special: itemTypeText.text = "特殊物品"; break;
+            case EquipmentType.Consumable: itemTypeText.text = "消耗品"; break;
         }
 
-        worldUI.SetActive(true);
+        itemDescription.text = _itemData.GetDescription();
+
+
+        itemToolTip.SetActive(true);
+    }
+
+    public void HideItemTip()
+    {
+        itemToolTip.SetActive(false);
     }
 }
 

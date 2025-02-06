@@ -14,11 +14,6 @@ public class ItemData_Equipment : ItemData
 {
     public EquipmentType equipmentType;
 
-    [Header("Majior stats")]
-    public int strength;
-    public int agility;
-    public int vitality;
-
     [Header("Offensive stats")]
     public int damage;
     public int cirtChance;
@@ -38,10 +33,6 @@ public class ItemData_Equipment : ItemData
     {
         PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
 
-        playerStats.strength.AddModifier(strength);
-        playerStats.agility.AddModifier(agility);
-        playerStats.vitality.AddModifier(vitality);
-
         playerStats.damage.AddModifier(damage);
         playerStats.cirtChance.AddModifier(cirtChance);
         playerStats.cirtPower.AddModifier(cirtPower);
@@ -54,10 +45,6 @@ public class ItemData_Equipment : ItemData
     public void RemoveModifiers()
     {
         PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
-
-        playerStats.strength.RemoveModifier(strength);
-        playerStats.agility.RemoveModifier(agility);
-        playerStats.vitality.RemoveModifier(vitality);
 
         playerStats.damage.RemoveModifier(damage);
         playerStats.cirtChance.RemoveModifier(cirtChance);
@@ -73,17 +60,15 @@ public class ItemData_Equipment : ItemData
         sb.Length = 0;
         descriptionLength = 0;
 
-        AddItemDescription(strength, "strength");
-        AddItemDescription(agility, "agility");
-        AddItemDescription(vitality, "vitality");
+        AddItemDescription(damage, "¹¥»÷ÉËº¦");
+        AddItemDescription(cirtChance, "±©»÷ÂÊ");
+        AddItemDescription(cirtPower, "±©»÷ÉËº¦");
 
-        AddItemDescription(damage, "damage");
-        AddItemDescription(cirtChance, "cirtChance");
-        AddItemDescription(cirtPower, "cirtPower");
+        AddItemDescription(maxHealth, "×î´óÉúÃüÖµ");
+        AddItemDescription(armor, "»¤¼×");
+        AddItemDescription(evasion, "ÉÁ±Ü");
 
-        AddItemDescription(maxHealth, "maxHealth");
-        AddItemDescription(armor, "armor");
-        AddItemDescription(evasion, "evasion");
+        sb.Append(itemDescription);
 
         return sb.ToString();
     }
@@ -97,6 +82,8 @@ public class ItemData_Equipment : ItemData
 
             if (_value > 0)
                 sb.Append("+ " + _value + " " + _name);
+            if (_value < 0)
+                sb.Append("- " + (-_value) + " " + _name);
 
             descriptionLength++;
         }

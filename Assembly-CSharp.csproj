@@ -81,6 +81,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveManager.cs" />
+    <Compile Include="Assets\Scripts\GameObject\InteractiveItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Scripts\GameObject\FairStory.cs" />
     <Compile Include="Assets\Scripts\UI\CraftList_UI.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Assets\Scripts\InventoryData\InventoryItem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\Scripts\UI\CheckMenu_UI.cs" />
     <Compile Include="Assets\Scripts\UI\EquipSlot_UI.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\UI\ItemSlot_UI.cs" />
@@ -159,6 +161,7 @@
     <Compile Include="Assets\Scripts\Enemy\Mushroom\MushroomMoveState.cs" />
     <Compile Include="Assets\Scripts\InventoryData\Inventory.cs" />
     <Compile Include="Assets\Scripts\Player\BlueZero\BlueZeroIdleState.cs" />
+    <Compile Include="Assets\Scripts\UI\StatToolTip_UI.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
     <Compile Include="Assets\Scripts\Enemy\Mushroom\MushroomGroundedState.cs" />
     <Compile Include="Assets\Scripts\Stat\CharacterStats.cs" />

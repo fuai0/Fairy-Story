@@ -1,13 +1,11 @@
 using System.Collections;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
-using UnityEditor.Overlays;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SaveManager : MonoBehaviour,ISaveManager
+public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance;
 
@@ -87,13 +85,12 @@ public class SaveManager : MonoBehaviour,ISaveManager
     // 从指定槽位加载
     public void LoadGame(int slotIndex)
     {
-
         string fullPlth = GetSaveFilePath(slotIndex);
         if (!File.Exists(fullPlth)) return;
 
         saveData = fileDataHandler.Load(fullPlth);
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene(saveData.sceneIndex); // 优先加载场景
+        SceneManager.LoadScene(saveData.sceneIndex); // 优先加载场景
 
         StartCoroutine(DelayLoad());
     }
@@ -126,21 +123,10 @@ public class SaveManager : MonoBehaviour,ISaveManager
     // 检查存档是否存在
     public bool IsSaveSlotEmpty(int slotIndex) => saveSlots[slotIndex].isEmpty;
 
-    // 获取每个文件的存档接口
+    // 获取每个需要保存数据存档接口
     private List<ISaveManager> FindAllSaveManagers()
     {
         IEnumerable<ISaveManager> saveManagers = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.InstanceID).OfType<ISaveManager>();
         return new List<ISaveManager>(saveManagers);
-    }
-
-    public void LoadData(SaveData _data)
-    {
-        PlayerManager.instance.player.transform.position = _data.playerPosition;
-    }
-
-    public void SaveData(ref SaveData _data)
-    {
-        _data.sceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-        _data.playerPosition = PlayerManager.instance.player.transform.position;
     }
 }

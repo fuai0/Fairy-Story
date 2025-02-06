@@ -1,11 +1,10 @@
 using TMPro;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door : InteractiveItem
 {
     [SerializeField] private TextMeshProUGUI worldName;
     [SerializeField] private TextMeshProUGUI buttonString;
-    private bool isInsideTrigger = false;
     private bool isActivate;
     private ParticleSystem ps;
 
@@ -14,25 +13,8 @@ public class Door : MonoBehaviour
         ps = GetComponentInChildren<ParticleSystem>();
 
         isActivate = false;
+        panelText = "按F键进入小红帽世界!";
         ps.Stop();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (isActivate && collision.gameObject.GetComponent<Player>() != null)
-        {
-            PanelManager.instance.ShowPanel("按F键进入小红帽世界!");
-            isInsideTrigger = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (isActivate && collision.GetComponent<Player>() != null)
-        {
-            PanelManager.instance.HidePanel();
-            isInsideTrigger = false;
-        }
     }
 
     private void Update()
@@ -45,6 +27,24 @@ public class Door : MonoBehaviour
 
         if (isActivate)
             ps.Play();
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Player>() != null && isActivate)
+        {
+            PanelManager.instance.ShowPanel(panelText);
+            isInsideTrigger = true;
+        }
+    }
+
+    protected override void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Player>() != null && isActivate)
+        {
+            PanelManager.instance.HidePanel();
+            isInsideTrigger = false;
+        }
     }
 
     public void ActivateDoor()

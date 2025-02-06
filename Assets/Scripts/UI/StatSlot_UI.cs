@@ -7,9 +7,6 @@ public class StatSlot_UI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI statValueText;
     [SerializeField] private StatType statType;
 
-    [TextArea]
-    [SerializeField] private string statDescription;
-
     private void Start()
     {
         UpdateStatValue();

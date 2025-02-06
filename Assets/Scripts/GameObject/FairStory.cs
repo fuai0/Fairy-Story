@@ -1,25 +1,10 @@
 using UnityEngine;
 
-public class FairStory : MonoBehaviour
+public class FairStory : InteractiveItem
 {
-    private bool isInsideTrigger = false;
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Start()
     {
-        if (collision.gameObject.GetComponent<Player>() != null)
-        {
-            PanelManager.instance.ShowPanel("按F键打开童话书!");
-            isInsideTrigger = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Player>() != null)
-        {
-            PanelManager.instance.HidePanel();
-            isInsideTrigger = false;
-        }
+        panelText = "按F键打开童话书!";
     }
 
     private void Update()

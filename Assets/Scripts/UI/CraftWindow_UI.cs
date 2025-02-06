@@ -1,16 +1,25 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
-public class CraftWindow_UI : MonoBehaviour
+public class CraftWindow_UI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image itemIcon;
     [SerializeField] private Button craftButton;
 
     [SerializeField] private Image[] materialImage;
 
+    [SerializeField] private GameObject craftTip;
+    [SerializeField] private TextMeshProUGUI craftName;
+    [SerializeField] private TextMeshProUGUI craftDescription;
+    private ItemData_Equipment equipment;
+
     public void SetupCraftWindow(ItemData_Equipment _data)
     {
+        equipment = _data;
+
         craftButton.onClick.RemoveAllListeners();
 
         for (int i = 0; i < materialImage.Length; i++)
@@ -34,5 +43,24 @@ public class CraftWindow_UI : MonoBehaviour
         itemIcon.color = Color.white;
 
         craftButton.onClick.AddListener(() => Inventory.instance.CanCraft(_data, _data.craftingMaterials));
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (equipment == null)
+            return;
+
+        craftName.text = equipment.itemName;
+        craftDescription.text = equipment.GetDescription();
+        
+        craftTip.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (equipment == null)
+            return;
+
+        craftTip.SetActive(false);
     }
 }

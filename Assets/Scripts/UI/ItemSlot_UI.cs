@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemSlot_UI : MonoBehaviour, IPointerDownHandler
+public class ItemSlot_UI : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] protected Image itemImage;
     [SerializeField] protected TextMeshProUGUI itemText;
@@ -60,5 +60,24 @@ public class ItemSlot_UI : MonoBehaviour, IPointerDownHandler
 
         if (item.data.itemType == ItemType.Equipment)
             Inventory.instance.EquipItem(item.data);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (item == null || item.data == null)
+            return;
+
+        if (item.data.itemType == ItemType.Material)
+            UI.instance.ShowItemTip(item.data);
+        else
+            UI.instance.ShowEquipmentTip(item.data as ItemData_Equipment);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (item == null || item.data == null)
+            return;
+
+        UI.instance.HideItemTip();
     }
 }

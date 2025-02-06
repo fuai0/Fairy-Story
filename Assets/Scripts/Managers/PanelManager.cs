@@ -32,7 +32,8 @@ public class PanelManager : MonoBehaviour
 
     public void HidePanel()
     {
-        panel.SetActive(false);
+        if(panel != null) 
+            panel.SetActive(false);
     }
 }
 
