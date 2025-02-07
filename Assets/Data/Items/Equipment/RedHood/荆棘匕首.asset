@@ -19,9 +19,6 @@ MonoBehaviour:
   itemDescription: 
   dropChance: 0
   equipmentType: 0
-  strength: 2
-  agility: 3
-  vitality: 0
   damage: 5
   cirtChance: 2
   cirtPower: 10
@@ -29,5 +26,7 @@ MonoBehaviour:
   armor: 0
   evasion: 0
   craftingMaterials:
-  - data: {fileID: 11400000, guid: dcf5d3cc67027fd488129bc93ccf1558, type: 2}
-    stackSize: 2
+  - data: {fileID: 11400000, guid: 77e34f086de8a61439167b3b30fecd19, type: 2}
+    stackSize: 1
+  - data: {fileID: 11400000, guid: 6937c678ae4045441a9d3b597407d32a, type: 2}
+    stackSize: 1
