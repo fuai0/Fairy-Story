@@ -27,7 +27,17 @@ public class ItemData_Equipment : ItemData
     [Header("craft requirement")]
     public List<InventoryItem> craftingMaterials;
 
-    private int descriptionLength;
+    [Header("Unique effect")]
+    public float itemCooldown;
+    public ItemEffect[] itemEffects;
+
+    public void Effect(EnemyStats _enemyStats = null, PlayerStats _playerStats = null)
+    {
+        foreach (var item in itemEffects)
+        {
+            item.ExecuteEffect(_enemyStats,_playerStats);
+        }
+    }
 
     public void AddModifiers()
     {
@@ -58,7 +68,6 @@ public class ItemData_Equipment : ItemData
     public override string GetDescription()
     {
         sb.Length = 0;
-        descriptionLength = 0;
 
         AddItemDescription(damage, "攻击伤害");
         AddItemDescription(cirtChance, "暴击率");
@@ -67,6 +76,15 @@ public class ItemData_Equipment : ItemData
         AddItemDescription(maxHealth, "最大生命值");
         AddItemDescription(armor, "护甲");
         AddItemDescription(evasion, "闪避");
+
+        for (int i = 0; i < itemEffects.Length; i++)
+        {
+            if (itemEffects[i].effectDescription.Length > 0)
+            {
+                sb.AppendLine();
+                sb.Append(itemEffects[i].effectName + " : " + itemEffects[i].effectDescription);
+            }
+        }
 
         sb.Append(itemDescription);
 
@@ -84,8 +102,6 @@ public class ItemData_Equipment : ItemData
                 sb.Append("+ " + _value + " " + _name);
             if (_value < 0)
                 sb.Append("- " + (-_value) + " " + _name);
-
-            descriptionLength++;
         }
     }
 }

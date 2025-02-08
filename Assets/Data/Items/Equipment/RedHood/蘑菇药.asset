@@ -10,21 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af8e68c411eef614f9affc960062f7a5, type: 3}
-  m_Name: "\u730E\u4EBA\u77ED\u5F13"
+  m_Name: "\u8611\u83C7\u836F"
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: "\u730E\u4EBA\u77ED\u5F13"
-  icon: {fileID: -6184507285319492425, guid: 076fbb356cd971146a83b3f4302cbb4e, type: 3}
+  itemName: "\u8611\u83C7\u836F"
+  icon: {fileID: 1018383391595562092, guid: d7d975b7e360a4a439941654561c8dbf, type: 3}
   itemDescription: 
-  dropChance: 100
-  equipmentType: 0
-  damage: 10
-  cirtChance: 5
-  cirtPower: 10
+  dropChance: 0
+  equipmentType: 3
+  damage: 0
+  cirtChance: 0
+  cirtPower: 0
   maxHealth: 0
   armor: 0
   evasion: 0
-  craftingMaterials: []
-  itemCooldown: 0
+  craftingMaterials:
+  - data: {fileID: 11400000, guid: 422bb919565869e4ab5f3de2683f48b6, type: 2}
+    stackSize: 10
+  itemCooldown: 20
   itemEffects:
-  - {fileID: 11400000, guid: 6ddf7e948c19e1c4e9406bf50a6c0698, type: 2}
+  - {fileID: 11400000, guid: 64b1fa4215648cd4b97be49a48e38a3c, type: 2}

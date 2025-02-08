@@ -20,6 +20,18 @@ public class RedHoodAnimationTriggers : MonoBehaviour
 
                 enemy.hittedDir = player.facingDir;
                 player.stats.DoDamage(enemy.stats);
+
+                ItemData_Equipment weaponData = Inventory.instance.GetEquip(EquipmentType.Weapon);
+
+                if (weaponData != null)
+                    weaponData.Effect(enemy.stats as EnemyStats, null);
+            }
+
+            if(hit.GetComponent<DestoryItem>() != null)
+            {
+                DestoryItem destoryItem = hit.GetComponent<DestoryItem>();
+
+                destoryItem.TakeDamage(player.stats.damage.GetValue());
             }
         }
     }

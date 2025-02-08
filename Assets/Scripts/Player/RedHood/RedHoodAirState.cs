@@ -22,7 +22,7 @@ public class RedHoodAirState : PlayerState
     {
         base.Update();
 
-        if (player.IsWallDetected())
+        if (player.IsWallDetected() && player.canWallSlide)
         {
             stateMachine.ChangeState(player.wallSlide);
         }

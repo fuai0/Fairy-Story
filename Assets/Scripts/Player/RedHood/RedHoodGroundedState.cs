@@ -28,7 +28,7 @@ public class RedHoodGroundedState : PlayerState
         if (Input.GetKeyDown(KeyCode.Mouse0))
             stateMachine.ChangeState(player.attackState);
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse1) && player.canShoot)
             stateMachine.ChangeState(player.shootState);
 
         if (Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected())

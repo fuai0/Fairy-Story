@@ -15,7 +15,6 @@ MonoBehaviour:
   itemType: 1
   itemName: "\u8346\u68D8\u5315\u9996"
   icon: {fileID: 5784196140317008990, guid: d7d975b7e360a4a439941654561c8dbf, type: 3}
-  itemId: 5
   itemDescription: 
   dropChance: 0
   equipmentType: 0
@@ -30,3 +29,6 @@ MonoBehaviour:
     stackSize: 1
   - data: {fileID: 11400000, guid: 6937c678ae4045441a9d3b597407d32a, type: 2}
     stackSize: 1
+  itemCooldown: 60
+  itemEffects:
+  - {fileID: 11400000, guid: d829be4d4b0d24942b3212b9c66d434f, type: 2}

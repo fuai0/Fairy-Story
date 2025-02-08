@@ -15,13 +15,12 @@ MonoBehaviour:
   itemType: 1
   itemName: "\u72FC\u722A\u624B\u5957"
   icon: {fileID: 1949537107891184483, guid: d7d975b7e360a4a439941654561c8dbf, type: 3}
-  itemId: 2
   itemDescription: 
   dropChance: 0
   equipmentType: 0
-  damage: 0
-  cirtChance: 0
-  cirtPower: 0
+  damage: 5
+  cirtChance: 2
+  cirtPower: 5
   maxHealth: 0
   armor: 0
   evasion: 0
@@ -30,3 +29,6 @@ MonoBehaviour:
     stackSize: 1
   - data: {fileID: 11400000, guid: dcf5d3cc67027fd488129bc93ccf1558, type: 2}
     stackSize: 1
+  itemCooldown: 0
+  itemEffects:
+  - {fileID: 11400000, guid: c911039a3443f20409e1540eb6e9c86a, type: 2}

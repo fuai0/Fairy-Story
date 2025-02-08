@@ -39,6 +39,9 @@ public class RedHood : Player
         hittedState = new RedHoodHittedState(this, stateMachine, "Hitted", this);
 
         shootState = new RedHoodShootState(this, stateMachine, "Shoot", this);
+
+        canShoot = false;
+        canWallSlide = false;
     }
 
     protected override void Start()
@@ -54,10 +57,23 @@ public class RedHood : Player
 
         if (hitted)
             stateMachine.ChangeState(hittedState);
+
+        if (Input.GetKeyDown(KeyCode.E))
+            UseConsumable();
     }
 
     public void CreateArrow()
     {
         Instantiate(arrowPrefab, transform.position, transform.rotation);
+    }
+
+    private void UseConsumable()
+    {
+        ItemData_Equipment consumableData = Inventory.instance.GetEquip(EquipmentType.Consumable);
+
+        if (consumableData == null)
+            return;
+        else
+            consumableData.Effect(null, PlayerManager.instance.player.stats as PlayerStats);
     }
 }

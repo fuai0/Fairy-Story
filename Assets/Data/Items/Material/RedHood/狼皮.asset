@@ -15,6 +15,5 @@ MonoBehaviour:
   itemType: 0
   itemName: "\u72FC\u76AE"
   icon: {fileID: -7165076937192758615, guid: d7d975b7e360a4a439941654561c8dbf, type: 3}
-  itemId: 2_3
-  itemDescription: "\u72FC\u76AE,\u5236\u4F5C\u6750\u6599,\u72FC\u7684"
+  itemDescription: "\u5C0F\u7EA2\u5E3D\u4E16\u754C\u4EA7\u7269,\u5236\u4F5C\u6750\u6599,\u51FB\u6740\u72FC\u6389\u843D"
   dropChance: 50

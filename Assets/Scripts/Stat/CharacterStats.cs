@@ -36,14 +36,26 @@ public class CharacterStats : MonoBehaviour
     public Stat armor;  // »¤¼×
     public Stat evasion; // ÉÁ±Ü
 
+    [Header("Blood")]
+    public bool isBlood;
+    [SerializeField] private int bloodDamage = 1;
+    [SerializeField] private float bloodDuration = 5f;
+    private float bloodCooldown = 1f;
+    private float bloodTimer;
+    private float bloodDamageTimer;
+
     public int currentHealth;
 
+    private bool isDead;
+
+    private SpriteRenderer sr;
     public System.Action onHealthChanged;
 
     [HideInInspector] public Entity entity;
 
     protected void Awake()
     {
+        sr = GetComponentInChildren<SpriteRenderer>();
         entity = GetComponent<Entity>();
         currentHealth = GetHealth();
     }
@@ -55,6 +67,41 @@ public class CharacterStats : MonoBehaviour
 
     protected virtual void Update()
     {
+        bloodTimer -= Time.deltaTime;
+        bloodDamageTimer -= Time.deltaTime;
+
+        if (isDead)
+            return;
+
+        if (bloodTimer < 0)
+            isBlood = false;
+
+        if (isBlood)
+            ApplyBloodDamage();
+
+    }
+
+    public void ApplyBlood()
+    {
+        isBlood = true;
+        bloodTimer = bloodDuration;
+    }
+
+    private void ApplyBloodDamage()
+    {
+        if(bloodDamageTimer < 0)
+        {
+            TakeDamage(bloodDamage);
+            StartCoroutine(BloodFX());
+            bloodDamageTimer = bloodCooldown;
+        }
+    }
+
+    private IEnumerator BloodFX()
+    {
+        sr.color = Color.red;
+        yield return new WaitForSeconds(.2f);
+        sr.color = Color.white;
     }
 
     public virtual void DoDamage(CharacterStats _targetStats)
@@ -103,11 +150,11 @@ public class CharacterStats : MonoBehaviour
 
         if (onHealthChanged != null)
             onHealthChanged();
-
     }
 
     protected virtual void Die()
     {
+        isDead = true;
         Destroy(gameObject);
     }
 

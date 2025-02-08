@@ -5426,7 +5426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &184005150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6203,7 +6203,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -7390,9 +7390,8 @@ MonoBehaviour:
   craftSlotParent: {fileID: 1818743212}
   craftSlotPrefab: {fileID: 4461508813321634979, guid: 90d4f53fe4e18924aa4be48dda77f0da, type: 3}
   craftEquipment:
-  - {fileID: 11400000, guid: bab7c40923cb5d44aa6f7f32b22c4cb5, type: 2}
-  - {fileID: 11400000, guid: d21f3f4949be2bb4c9b875cbcd88c0bb, type: 2}
   - {fileID: 11400000, guid: e6e080a89250a6f49b3b5a3194552be3, type: 2}
+  - {fileID: 11400000, guid: bab7c40923cb5d44aa6f7f32b22c4cb5, type: 2}
 --- !u!1 &613454584
 GameObject:
   m_ObjectHideFlags: 0
@@ -10968,7 +10967,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftSlotParent: {fileID: 1818743212}
   craftSlotPrefab: {fileID: 4461508813321634979, guid: 90d4f53fe4e18924aa4be48dda77f0da, type: 3}
-  craftEquipment: []
+  craftEquipment:
+  - {fileID: 11400000, guid: cb7633bc3b20d3149a13ce324b4dc2dc, type: 2}
 --- !u!1 &1368910431
 GameObject:
   m_ObjectHideFlags: 0
@@ -12206,8 +12206,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54
-  m_fontSizeBase: 54
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -25550,7 +25550,21 @@ MonoBehaviour:
   equipmentSlotParent: {fileID: 4548432875116925187}
   equipSlotParent: {fileID: 7169193113861862498}
   statSlotParent: {fileID: 1079116195102667208}
-  itemDataBase: []
+  itemDataBase:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 399ecfc659d080f41b9eb345f7e6e555, type: 2}
+  - {fileID: 11400000, guid: e6e080a89250a6f49b3b5a3194552be3, type: 2}
+  - {fileID: 11400000, guid: d21f3f4949be2bb4c9b875cbcd88c0bb, type: 2}
+  - {fileID: 11400000, guid: ee74a4eed22d2664ba2c29fa5c130884, type: 2}
+  - {fileID: 11400000, guid: bab7c40923cb5d44aa6f7f32b22c4cb5, type: 2}
+  - {fileID: 11400000, guid: cb7633bc3b20d3149a13ce324b4dc2dc, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 6937c678ae4045441a9d3b597407d32a, type: 2}
+  - {fileID: 11400000, guid: 77e34f086de8a61439167b3b30fecd19, type: 2}
+  - {fileID: 11400000, guid: dcf5d3cc67027fd488129bc93ccf1558, type: 2}
+  - {fileID: 11400000, guid: 422bb919565869e4ab5f3de2683f48b6, type: 2}
   loadedItems: []
   loadedEquips: []
 --- !u!224 &2952754343903267924
@@ -34506,7 +34520,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &3717964413853042509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -44806,7 +44820,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

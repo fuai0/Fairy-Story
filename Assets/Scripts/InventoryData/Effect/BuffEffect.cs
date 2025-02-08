@@ -9,10 +9,8 @@ public class Buff_Effect : ItemEffect
     [SerializeField] private float buffDuration;
 
 
-    public override void ExecuteEffect(Transform _enemyPosition)
+    public override void ExecuteEffect(EnemyStats _enemyStats, PlayerStats _playerStats)
     {
-        stats = PlayerManager.instance.player.GetComponent<PlayerStats>();
-
-        stats.IncreaseStat(buffAmount, buffDuration, stats.GetStat(buffType));
+        _playerStats.IncreaseStat(buffAmount, buffDuration, _playerStats.GetStat(buffType));
     }
 }

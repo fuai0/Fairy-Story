@@ -103,6 +103,11 @@ public class Inventory : MonoBehaviour, ISaveManager
 
         newEquipment.AddModifiers();
 
+        foreach(var effect in newEquipment.itemEffects)
+        {
+            effect.EquipEffect();
+        }
+
         RemoveItem(_item);
     }
 
@@ -113,6 +118,11 @@ public class Inventory : MonoBehaviour, ISaveManager
             equip.Remove(value);
             equipDictionary.Remove(itemToRemove);
             itemToRemove.RemoveModifiers();
+
+            foreach (var effect in itemToRemove.itemEffects)
+            {
+                effect.UnEquipEffect();
+            }
         }
     }
 
@@ -288,7 +298,7 @@ public class Inventory : MonoBehaviour, ISaveManager
         {
             foreach (var item in itemDataBase)
             {
-                if (item != null && item.itemId == pair.Key)
+                if (item != null && item.itemName == pair.Key)
                 {
                     InventoryItem itemLoad = new InventoryItem(item);
                     itemLoad.stackSize = pair.Value;
@@ -302,7 +312,7 @@ public class Inventory : MonoBehaviour, ISaveManager
         {
             foreach (var item in itemDataBase)
             {
-                if (item != null && item.itemId == pair)
+                if (item != null && item.itemName == pair)
                 {
                     loadedEquips.Add(item as ItemData_Equipment);
                 }
@@ -318,17 +328,17 @@ public class Inventory : MonoBehaviour, ISaveManager
 
         foreach (var pair in equipmentDictionary)
         {
-            _data.inventoryId.Add(pair.Key.itemId, pair.Value.stackSize);
+            _data.inventoryId.Add(pair.Key.itemName, pair.Value.stackSize);
         }
 
         foreach (var pair in stashDictionary)
         {
-            _data.inventoryId.Add(pair.Key.itemId, pair.Value.stackSize); 
+            _data.inventoryId.Add(pair.Key.itemName, pair.Value.stackSize); 
         }
 
         foreach (var pair in equipDictionary)
         {
-            _data.equipId.Add(pair.Key.itemId);
+            _data.equipId.Add(pair.Key.itemName);
         }
     }
 

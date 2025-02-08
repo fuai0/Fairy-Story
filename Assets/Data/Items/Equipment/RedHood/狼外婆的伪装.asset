@@ -15,16 +15,17 @@ MonoBehaviour:
   itemType: 1
   itemName: "\u72FC\u5916\u5A46\u7684\u4F2A\u88C5"
   icon: {fileID: -6763620941933801878, guid: d7d975b7e360a4a439941654561c8dbf, type: 3}
-  itemId: 1_1
   itemDescription: 
   dropChance: 0
   equipmentType: 2
   damage: 0
   cirtChance: 0
   cirtPower: 0
-  maxHealth: 0
-  armor: 0
-  evasion: 0
+  maxHealth: 10
+  armor: 3
+  evasion: 5
   craftingMaterials:
   - data: {fileID: 11400000, guid: dcf5d3cc67027fd488129bc93ccf1558, type: 2}
+    stackSize: 2
+  - data: {fileID: 11400000, guid: 77e34f086de8a61439167b3b30fecd19, type: 2}
     stackSize: 2

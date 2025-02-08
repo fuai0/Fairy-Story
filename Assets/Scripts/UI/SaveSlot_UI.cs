@@ -34,6 +34,7 @@ public class SaveSlot_UI : MonoBehaviour
     }
     public void LoadSlot()
     {
+        GameManager.instance.PauseGame(false);
         SaveManager.instance.LoadGame(slotIndex);
         Initialize();
     }

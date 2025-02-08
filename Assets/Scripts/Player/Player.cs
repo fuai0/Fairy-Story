@@ -11,6 +11,9 @@ public class Player : Entity
     [Header("Attack details")]
     public Vector2[] attackMovement;
 
+    public bool canWallSlide;
+    public bool canShoot;
+
     public PlayerStateMachine stateMachine { get; private set; }
 
     protected override void Awake()
