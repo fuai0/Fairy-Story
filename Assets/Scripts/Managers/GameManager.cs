@@ -92,24 +92,6 @@ public class GameManager : MonoBehaviour,ISaveManager
             _data.checkPoints.Add(checkpoint.id, checkpoint.activated);
     }
 
-    private CheckPoint FindClosestCheckpoint()
-    {
-        float closestDistance = Mathf.Infinity;
-        CheckPoint closestCheckPoint = null;
-
-        foreach (var checkpoint in checkPoints)
-        {
-            float distanceToCheckpoint = Vector2.Distance(player.transform.position, checkpoint.transform.position);
-
-            if (distanceToCheckpoint < closestDistance && checkpoint.activated)
-            {
-                closestCheckPoint = checkpoint;
-                closestDistance = distanceToCheckpoint;
-            }
-        }
-
-        return closestCheckPoint;
-    }
 
     public void PauseGame(bool _pause)
     {
@@ -123,24 +105,22 @@ public class GameManager : MonoBehaviour,ISaveManager
     {
         Scene scene = SceneManager.GetActiveScene();
         SaveData saveData = new SaveData();
-        CheckPoint closestCheckPoint = FindClosestCheckpoint(); 
+        Vector2 closestPointPosition = FindClosestCheckpoint().transform.position;
 
         SaveCheckPoints(ref saveData);
-        Debug.Log(saveData.checkPoints.Count);
+
         ChangeSence(scene.name);
 
-        StartCoroutine(DelayRestart(saveData, closestCheckPoint));
-
+        StartCoroutine(DelayRestart(saveData, closestPointPosition));
     }
 
-    private IEnumerator DelayRestart(SaveData saveData,CheckPoint closestCheckPoint)
+    private IEnumerator DelayRestart(SaveData saveData, Vector2 closestPointPosition)
     {
-        yield return new WaitForSeconds(.6f);
-        Debug.Log(saveData.checkPoints.Count);
+        yield return new WaitForSeconds(.5f);
         LoadCheckPoints(saveData);
 
-        if(closestCheckPoint != null)
-            PlayerManager.instance.player.transform.position = closestCheckPoint.transform.position; 
+        if (closestPointPosition != null)
+            PlayerManager.instance.player.transform.position = closestPointPosition; 
     }
 
     private void SaveCheckPoints(ref SaveData saveData)
@@ -161,6 +141,24 @@ public class GameManager : MonoBehaviour,ISaveManager
         }
     }
 
+    private CheckPoint FindClosestCheckpoint()
+    {
+        float closestDistance = Mathf.Infinity;
+        CheckPoint closestCheckPoint = null;
+
+        foreach (var checkpoint in checkPoints)
+        {
+            float distanceToCheckpoint = Vector2.Distance(player.transform.position, checkpoint.transform.position);
+
+            if (distanceToCheckpoint < closestDistance && checkpoint.activated)
+            {
+                closestCheckPoint = checkpoint;
+                closestDistance = distanceToCheckpoint;
+            }
+        }
+
+        return closestCheckPoint;
+    }
     private List<CheckPoint> FindAllCheckPoints()
     {
         IEnumerable<CheckPoint> CheckPoints = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.InstanceID).OfType<CheckPoint>();
