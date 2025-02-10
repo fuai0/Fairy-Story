@@ -21,4 +21,9 @@ public class MushroomAnimationTrigger : MonoBehaviour
             }
         }
     }
+
+    private void DeadTrigger()
+    {
+        Destroy(enemy.gameObject);
+    }
 }

@@ -10,6 +10,8 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject worldUI;
     [SerializeField] private GameObject checkMenuUI;
+    [SerializeField] private GameObject deadUI;
+
 
     [SerializeField] private GameObject majorStatsUI;
     [SerializeField] private GameObject statsUI;
@@ -123,5 +125,10 @@ public class UI : MonoBehaviour
     {
         itemToolTip.SetActive(false);
     }
+
+    public void ShowDeadUI() => deadUI.SetActive(true);
+    public void HideDeadUI() => deadUI.SetActive(false);
+
+    public void Restart() => GameManager.instance.Restart();
 }
 

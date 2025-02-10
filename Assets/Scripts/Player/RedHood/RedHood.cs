@@ -36,9 +36,9 @@ public class RedHood : Player
         wallJump = new RedHoodWallJumpState(this, stateMachine, "Air", this);
 
         attackState = new RedHoodAttackState(this, stateMachine, "Attack", this);
+        shootState = new RedHoodShootState(this, stateMachine, "Shoot", this);
         hittedState = new RedHoodHittedState(this, stateMachine, "Hitted", this);
 
-        shootState = new RedHoodShootState(this, stateMachine, "Shoot", this);
 
         canShoot = false;
         canWallSlide = false;

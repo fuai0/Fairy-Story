@@ -46,7 +46,7 @@ public class CharacterStats : MonoBehaviour
 
     public int currentHealth;
 
-    private bool isDead;
+    public bool Dead;
 
     private SpriteRenderer sr;
     public System.Action onHealthChanged;
@@ -70,7 +70,7 @@ public class CharacterStats : MonoBehaviour
         bloodTimer -= Time.deltaTime;
         bloodDamageTimer -= Time.deltaTime;
 
-        if (isDead)
+        if (Dead)
             return;
 
         if (bloodTimer < 0)
@@ -123,6 +123,9 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void TakeDamage(int _damage)
     {
+        if (Dead)
+            return;
+
         DecreaseHealth(_damage);
 
         if (currentHealth <= 0)
@@ -154,8 +157,7 @@ public class CharacterStats : MonoBehaviour
 
     protected virtual void Die()
     {
-        isDead = true;
-        Destroy(gameObject);
+        Dead = true;
     }
 
     #region Í³¼Æ¼ÆËã

@@ -1,4 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,7 +9,7 @@ public class GameManager : MonoBehaviour,ISaveManager
 {
     public static GameManager instance;
    
-    [SerializeField] private CheckPoint[] checkPoints;
+    private List<CheckPoint> checkPoints;
 
     private Player player;
 
@@ -27,6 +30,8 @@ public class GameManager : MonoBehaviour,ISaveManager
     {
         if (PlayerManager.instance != null)
             player = PlayerManager.instance.player;
+
+        checkPoints = FindAllCheckPoints();
     }
 
     public void ChangeSence(string worldName)
@@ -112,5 +117,53 @@ public class GameManager : MonoBehaviour,ISaveManager
             Time.timeScale = 0;
         else
             Time.timeScale = 1;
+    }
+
+    public void Restart()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SaveData saveData = new SaveData();
+        CheckPoint closestCheckPoint = FindClosestCheckpoint(); 
+
+        SaveCheckPoints(ref saveData);
+        Debug.Log(saveData.checkPoints.Count);
+        ChangeSence(scene.name);
+
+        StartCoroutine(DelayRestart(saveData, closestCheckPoint));
+
+    }
+
+    private IEnumerator DelayRestart(SaveData saveData,CheckPoint closestCheckPoint)
+    {
+        yield return new WaitForSeconds(.6f);
+        Debug.Log(saveData.checkPoints.Count);
+        LoadCheckPoints(saveData);
+
+        if(closestCheckPoint != null)
+            PlayerManager.instance.player.transform.position = closestCheckPoint.transform.position; 
+    }
+
+    private void SaveCheckPoints(ref SaveData saveData)
+    {
+        foreach (var checkpoint in checkPoints)
+            saveData.checkPoints.Add(checkpoint.id, checkpoint.activated);
+    }
+
+    private void LoadCheckPoints(SaveData saveData)
+    {
+        foreach (var pair in saveData.checkPoints)
+        {
+            foreach (var checkpoint in checkPoints)
+            {
+                if (pair.Key == checkpoint.id && pair.Value == true)
+                    checkpoint.ActivateCheckpoint();
+            }
+        }
+    }
+
+    private List<CheckPoint> FindAllCheckPoints()
+    {
+        IEnumerable<CheckPoint> CheckPoints = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.InstanceID).OfType<CheckPoint>();
+        return new List<CheckPoint>(CheckPoints);
     }
 }

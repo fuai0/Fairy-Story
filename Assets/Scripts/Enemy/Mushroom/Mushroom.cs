@@ -7,6 +7,7 @@ public class Mushroom : Enemy
     public MushroomBattleState battleState { get; private set; }
     public MushroomAttackState attackState { get; private set; }
     public MushroomHittedState hittedState { get; private set; }
+    public MushroomDeadState deadState { get; private set; }
 
     #endregion
 
@@ -19,6 +20,7 @@ public class Mushroom : Enemy
         battleState = new MushroomBattleState(this, stateMachine, "Move", this);
         attackState = new MushroomAttackState(this, stateMachine, "Attack", this);
         hittedState = new MushroomHittedState(this, stateMachine, "Hitted", this);
+        deadState = new MushroomDeadState(this, stateMachine, "Dead", this);
     }
 
     protected override void Start()
@@ -33,5 +35,8 @@ public class Mushroom : Enemy
 
         if(hitted)
             stateMachine.ChangeState(hittedState);
+
+        if (stats.Dead)
+            stateMachine.ChangeState(deadState);
     }
 }

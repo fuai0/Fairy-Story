@@ -24,6 +24,9 @@ public class HealthBar_UI : MonoBehaviour
 
     private void UpdateHealthUI()
     {
+        if(stats.currentHealth <= 0)
+            gameObject.SetActive(false);
+
         slider.maxValue = stats.GetHealth();
         slider.value = stats.currentHealth;
         healthText.text = slider.value.ToString() + " / " + slider.maxValue.ToString();

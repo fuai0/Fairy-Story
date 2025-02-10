@@ -7,4 +7,10 @@ public class PlayerStats : CharacterStats
         base.Start();
     }
 
+    protected override void Die()
+    {
+        base.Die();
+
+        UI.instance.ShowDeadUI();
+    }
 }
