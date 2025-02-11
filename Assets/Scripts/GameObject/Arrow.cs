@@ -32,6 +32,8 @@ public class Arrow : MonoBehaviour
     {
         if(collision.GetComponent<Enemy>() != null)
         {
+            AudioManager.instance.PlaySfx(1);
+
             Enemy enemy = collision.GetComponent<Enemy>();
             enemy.hittedDir = moveDir;
             player.stats.DoDamage(enemy.stats);

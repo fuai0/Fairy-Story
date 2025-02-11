@@ -10,6 +10,7 @@ public class RedHoodJumpState : PlayerState
 
     public override void Enter()
     {
+        AudioManager.instance.PlaySfx(4);
         base.Enter();
 
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, player.jumpForce);

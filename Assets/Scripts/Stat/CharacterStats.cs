@@ -160,6 +160,11 @@ public class CharacterStats : MonoBehaviour
         Dead = true;
     }
 
+    public void Kill()
+    {
+        Die();
+    }
+
     #region Õ≥º∆º∆À„
 
     protected int CheckTargetArmor(CharacterStats _targetStats, int totalDamage)

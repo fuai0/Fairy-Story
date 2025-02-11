@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class UI : MonoBehaviour
     [SerializeField] private GameObject mapUI;
     [SerializeField] private GameObject optionUI;
     [SerializeField] private GameObject craftUI;
+    [SerializeField] private GameObject craftTip;
     [SerializeField] private GameObject worldUI;
     [SerializeField] private GameObject checkMenuUI;
     [SerializeField] private GameObject deadUI;
@@ -48,7 +50,7 @@ public class UI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
             SwitchWithKeyTo(mapUI);
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.O))
             SwitchWithKeyTo(optionUI);
     }
 
@@ -130,5 +132,23 @@ public class UI : MonoBehaviour
     public void HideDeadUI() => deadUI.SetActive(false);
 
     public void Restart() => GameManager.instance.Restart();
+
+    public void ShowCraftTip(string _text)
+    {
+        craftTip.SetActive(true);
+        craftTip.GetComponentInChildren<TextMeshProUGUI>().text = _text;
+    }
+
+    public void HideCraftTip()
+    {
+        StartCoroutine(DelayHide());
+    }
+
+    private IEnumerator DelayHide()
+    {
+        yield return new WaitForSeconds(2f);
+
+        craftTip.SetActive(false);
+    }
 }
 

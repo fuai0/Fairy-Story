@@ -11,6 +11,9 @@ public class RedHoodWallJumpState : PlayerState
     public override void Enter()
     {
         base.Enter();
+
+        AudioManager.instance.PlaySfx(4);
+
         stateTimer = .4f;
         player.SetVelocity(5 * -player.facingDir, player.jumpForce);
     }

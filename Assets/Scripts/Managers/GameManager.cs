@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour,ISaveManager
+public class GameManager : MonoBehaviour, ISaveManager
 {
     public static GameManager instance;
-   
+
     private List<CheckPoint> checkPoints;
 
     private Player player;
@@ -120,7 +119,7 @@ public class GameManager : MonoBehaviour,ISaveManager
         LoadCheckPoints(saveData);
 
         if (closestPointPosition != null)
-            PlayerManager.instance.player.transform.position = closestPointPosition; 
+            PlayerManager.instance.player.transform.position = closestPointPosition;
     }
 
     private void SaveCheckPoints(ref SaveData saveData)

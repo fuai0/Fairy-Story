@@ -16,6 +16,8 @@ public class RedHoodAnimationTriggers : MonoBehaviour
         {
             if (hit.GetComponent<Enemy>() != null)
             {
+                AudioManager.instance.PlaySfx(1);
+
                 Enemy enemy = hit.GetComponent<Enemy>();
 
                 enemy.hittedDir = player.facingDir;

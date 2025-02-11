@@ -12,11 +12,15 @@ public class BlueZeroMoveState : PlayerState
     public override void Enter()
     {
         base.Enter();
+
+        AudioManager.instance.PlaySfx(3);
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        AudioManager.instance.StopSfx(3);
     }
 
     public override void Update()

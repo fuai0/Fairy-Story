@@ -15,6 +15,7 @@ public class RedHoodAttackState : PlayerState
 
     public override void Enter()
     {
+        AudioManager.instance.PlaySfx(0);
         base.Enter();
 
         // 获取鼠标位置

@@ -15,6 +15,7 @@ public class RedHoodAirState : PlayerState
 
     public override void Exit()
     {
+        AudioManager.instance.PlaySfx(5);
         base.Exit();
     }
 

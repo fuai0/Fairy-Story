@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 public class Inventory : MonoBehaviour, ISaveManager
@@ -57,8 +59,6 @@ public class Inventory : MonoBehaviour, ISaveManager
         equipmentItemSlot = equipmentSlotParent.GetComponentsInChildren<ItemSlot_UI>();
         equipSlot = equipSlotParent.GetComponentsInChildren<EquipSlot_UI>();
         statSlot = statSlotParent.GetComponentsInChildren<StatSlot_UI>();
-
-        FillUpItemDataBase();
     }
 
     private void AddLoadItems()
@@ -103,7 +103,7 @@ public class Inventory : MonoBehaviour, ISaveManager
 
         newEquipment.AddModifiers();
 
-        foreach(var effect in newEquipment.itemEffects)
+        foreach (var effect in newEquipment.itemEffects)
         {
             effect.EquipEffect();
         }
@@ -247,7 +247,8 @@ public class Inventory : MonoBehaviour, ISaveManager
             {
                 if (stashValue.stackSize < _requiredMaterials[i].stackSize)
                 {
-                    Debug.Log("材料不足");
+                    UI.instance.ShowCraftTip("材料不足");
+                    UI.instance.HideCraftTip();
                     return false;
                 }
                 else
@@ -257,7 +258,8 @@ public class Inventory : MonoBehaviour, ISaveManager
             }
             else
             {
-                Debug.Log("材料不足");
+                UI.instance.ShowCraftTip("材料不足");
+                UI.instance.HideCraftTip();
                 return false;
             }
         }
@@ -272,7 +274,8 @@ public class Inventory : MonoBehaviour, ISaveManager
 
         AddItem(_itemToCraft);
 
-        Debug.Log(_itemToCraft.itemName + " 制作成功");
+        UI.instance.ShowCraftTip("制作成功");
+        UI.instance.HideCraftTip();
         return true;
     }
 
@@ -333,7 +336,7 @@ public class Inventory : MonoBehaviour, ISaveManager
 
         foreach (var pair in stashDictionary)
         {
-            _data.inventoryId.Add(pair.Key.itemName, pair.Value.stackSize); 
+            _data.inventoryId.Add(pair.Key.itemName, pair.Value.stackSize);
         }
 
         foreach (var pair in equipDictionary)

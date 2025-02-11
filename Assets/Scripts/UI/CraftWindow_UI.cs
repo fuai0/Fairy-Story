@@ -2,7 +2,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class CraftWindow_UI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -52,7 +51,7 @@ public class CraftWindow_UI : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
         craftName.text = equipment.itemName;
         craftDescription.text = equipment.GetDescription();
-        
+
         craftTip.SetActive(true);
     }
 
