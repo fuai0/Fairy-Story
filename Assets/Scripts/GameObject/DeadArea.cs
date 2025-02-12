@@ -9,7 +9,7 @@ public class DeadArea : MonoBehaviour
             collision.transform.position = Vector2.zero;
             return;
         }
-        if(collision.GetComponent<CharacterStats>() == null)
+        if(collision.GetComponent<CharacterStats>() != null)
         {
             collision.GetComponent<CharacterStats>().Kill();
         }
