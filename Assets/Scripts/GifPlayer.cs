@@ -4,7 +4,6 @@ using System.Drawing.Imaging;
 using UnityEditor;
 using UnityEngine;
 
-
 public class GifPlayer : MonoBehaviour
 {
     public string path;
